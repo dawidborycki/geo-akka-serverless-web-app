@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">    
+</head>
+
+<body class="w3-black">
+    
+    <header class="w3-container w3-padding-32 w3-center w3-black">
+        <h1 class="w3-jumbo">Weather Alerting</h1>        
+    </header>
+            
+    <form class="w3-container w3-padding-32" action="#" th:action="@{/handleSubmit}" th:object="${geolocation}" method="post">        
+        <table>
+            <tr>
+                <td>User id:</td>
+                <td><input type="number" class="w3-input" placeholder="userId" th:field="*{userId}"/></td>
+                <td class="w3-text-red" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"></td>
+            </tr>
+            <tr>
+                <td>Latitude:</td>
+                <td><input type="text" class="w3-input" placeholder="Lat" th:field="*{lat}" /></td>
+                <td class="w3-text-red" th:if="${#fields.hasErrors('lat')}" th:errors="*{lat}"></td>
+            </tr>
+            <tr>
+                <td>Longitude:</td>
+                <td><input type="text" class="w3-input" placeholder="Lng" th:field="*{lng}" /></td>
+                <td class="w3-text-red" th:if="${#fields.hasErrors('lng')}" th:errors="*{lng}"></td>
+            </tr>
+            <tr>
+                <td><button class="w3-button w3-black" type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>    
+</body>
+</html>
