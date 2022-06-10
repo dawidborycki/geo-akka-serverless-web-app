@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class WeatherAlertingController {    
-    @Value("${akka.serverless.endpoint}")
+    @Value("${kalix.endpoint}")
     private String endpoint;
 
     private final RestTemplate restTemplate;
